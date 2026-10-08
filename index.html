@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#fbf2f6">
+    <title>Подарок на ДР!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <main class="app-space" id="app-space" role="tabpanel" aria-labelledby="tab-home" tabindex="0" aria-label="Главное">
+        <div class="home-content" id="home-content" data-panel="Главное">
+            <header class="app-heading">
+                <h1>Подарок на ДР!</h1>
+            </header>
+
+            <section class="birthday-block" aria-labelledby="birthday-title">
+                <p class="section-kicker">только для тебя</p>
+                <h2 id="birthday-title">Загадай желание</h2>
+
+                <div class="cake-display is-lit" id="cake-display" aria-hidden="true">
+                    <span class="cake-star cake-star-one">✦</span>
+                    <span class="cake-star cake-star-two">✧</span>
+                    <div class="cake">
+                        <div class="cake-candles">
+                            <span class="candle candle-one"><i class="candle-flame"></i></span>
+                            <span class="candle candle-two"><i class="candle-flame"></i></span>
+                            <span class="candle candle-three"><i class="candle-flame"></i></span>
+                            <span class="candle candle-four"><i class="candle-flame"></i></span>
+                            <span class="candle candle-five"><i class="candle-flame"></i></span>
+                        </div>
+                        <div class="cake-tier cake-tier-top"></div>
+                        <div class="cake-icing cake-icing-top"></div>
+                        <div class="cake-tier cake-tier-bottom"></div>
+                        <div class="cake-icing cake-icing-bottom"></div>
+                        <div class="cake-plate"></div>
+                    </div>
+                </div>
+
+                <button class="light-candles-button" id="light-candles" type="button" aria-pressed="true">Задуть свечи</button>
+                <p class="wish-result" id="wish-result" aria-live="polite" hidden>Всё, что ты загадала, сбудется!</p>
+            </section>
+
+            <section class="letter-block" aria-labelledby="letter-heading">
+                <p class="section-kicker">несколько слов от меня</p>
+                <h2 id="letter-heading">Письмо для тебя</h2>
+                <button class="letter-toggle" id="letter-toggle" type="button" aria-expanded="false" aria-controls="letter-content">
+                    <span class="letter-toggle-copy">
+                        <span class="letter-toggle-title">Открыть письмо</span>
+                        <span class="letter-toggle-caption">Для тебя — несколько важных слов</span>
+                    </span>
+                    <span class="letter-toggle-icon" aria-hidden="true">↗</span>
+                </button>
+                <div class="letter-content" id="letter-content" hidden>
+                    <p class="letter-placeholder">Милена, поздравляю тебя с новым важным этапом в жизни! Ты огромная молодчинка и всегда будешь на высоте!<br><br>Хотя в производстве этого подарка участвовал ИИ, это письмо я пишу собственными руками и своими мыслями.<br><br>Ты стала для меня правда важным человеком в жизни, ради которого я готов стараться на все 100%, помогать тебе во всем и делать всё, чтобы ты была счастливая. Я люблю тебя и весь этот сайт является одним из моих подарков тебе (Пишу я его кстати, пока мы смотрим киберпанк).<br><br>Ты неимоверно красивая, амбициозная и сильная духом девушка, мне нравится в тебе всё: Как ты одеваешься, чем увлекаешься, как смеешься, и этот список можно продолжать бесконечно. Продолжай быть такой же веселой и одновременно строгой девушкой и не позволяй кому-либо оскорблять cебя и cвои интересы!<br><br>Я желаю тебе успехов во всех твоих начинаниях, а также в целях, которые ты уже упорно добиваешься. Я рад, что даже спустя годы, ты остаешься всё такой же Миленой, как и в наш день знакомства❤️</p>
+                </div>
+            </section>
+
+            <section class="micro-grid" aria-label="Наши маленькие радости">
+                <article class="micro-card love-card">
+                    <span class="micro-value" aria-hidden="true">498</span>
+                    <h2>Дней любви</h2>
+                    <p>и это только начало</p>
+                </article>
+                <article class="micro-card happy-card">
+                    <span class="micro-value">365</span>
+                    <h2>поводов для счастья</h2>
+                    <p>пусть каждый день радует</p>
+                </article>
+            </section>
+        </div>
+
+        <section class="tab-page" id="photos-content" data-panel="Фотки" aria-labelledby="photos-heading" hidden>
+            <header class="tab-page-heading">
+                <p class="section-kicker">маленькая коллекция счастья</p>
+                <h1 id="photos-heading">Наши воспоминания</h1>
+            </header>
+            <div class="memory-grid" aria-label="Фотографии и воспоминания">
+                <figure class="memory-photo">
+                    <div class="memory-image-frame">
+                        <img class="memory-image" src="images/memories/hb_1.jpg" alt="Фото для воспоминания 1" loading="lazy">
+                        <div class="memory-placeholder" aria-hidden="true" hidden><span>ФОТО 01</span></div>
+                    </div>
+                    <figcaption><span>Здесь между нами промелькнула искра</span><time>23.02.2025</time></figcaption>
+                </figure>
+                <figure class="memory-photo">
+                    <div class="memory-image-frame">
+                        <img class="memory-image" src="images/memories/hb_2.jpg" alt="Фото для воспоминания 2" loading="lazy">
+                        <div class="memory-placeholder" aria-hidden="true" hidden><span>ФОТО 02</span></div>
+                    </div>
+                    <figcaption><span>Начало нашего пути</span><time>27.05.2025</time></figcaption>
+                </figure>
+                <figure class="memory-photo">
+                    <div class="memory-image-frame">
+                        <img class="memory-image" src="images/memories/hb_4.jpg" alt="Фото для воспоминания 4" loading="lazy">
+                        <div class="memory-placeholder" aria-hidden="true" hidden><span>ФОТО 04</span></div>
+                    </div>
+                    <figcaption><span>Поистине счастливая неделя в другом городе</span><time>20.08.2025</time></figcaption>
+                </figure>
+                <figure class="memory-photo">
+                    <div class="memory-image-frame">
+                        <img class="memory-image" src="images/memories/hb_3.jpg" alt="Фото для воспоминания 3" loading="lazy">
+                        <div class="memory-placeholder" aria-hidden="true" hidden><span>ФОТО 03</span></div>
+                    </div>
+                    <figcaption><span>Мой первый серьезный подарок любимому человеку</span><time>08.10.2025</time></figcaption>
+                </figure>
+                <figure class="memory-photo">
+                    <div class="memory-image-frame">
+                        <img class="memory-image" src="images/memories/hb_5.jpg" alt="Фото для воспоминания 5" loading="lazy">
+                        <div class="memory-placeholder" aria-hidden="true" hidden><span>ФОТО 05</span></div>
+                    </div>
+                    <figcaption><span>Ради тебя был готов сесть в самолет</span><time>03.11.2025</time></figcaption>
+                </figure>
+                <figure class="memory-photo">
+                    <div class="memory-image-frame">
+                        <img class="memory-image" src="images/memories/hb_6.jpg" alt="Фото для воспоминания 6" loading="lazy">
+                        <div class="memory-placeholder" aria-hidden="true" hidden><span>ФОТО 06</span></div>
+                    </div>
+                    <figcaption><span>Мы смогли найти силы поговорить</span><time>06.07.2026</time></figcaption>
+                </figure>
+                <figure class="memory-photo">
+                    <div class="memory-image-frame">
+                        <img class="memory-image" src="images/memories/hb_7.jpg" alt="Фото для воспоминания 7" loading="lazy">
+                        <div class="memory-placeholder" aria-hidden="true" hidden><span>ФОТО 07</span></div>
+                    </div>
+                    <figcaption><span>Держу на руках самого лучшего человека на свете</span><time>14.08.2026</time></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="tab-page" id="series-content" data-panel="Сериалы" aria-labelledby="series-heading" hidden>
+            <header class="tab-page-heading">
+                <p class="section-kicker">от тех, кто тоже стал любимым</p>
+                <h1 id="series-heading">Поздравления от героев</h1>
+            </header>
+            <div class="series-list">
+                <article class="series-card">
+                    <img class="series-portrait" src="https://static.tvmaze.com/uploads/images/medium_portrait/526/1315514.jpg" alt="Хоумлендер из сериала Пацаны" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Хоумлендер</h2>
+                        <p class="series-name">Пацаны</p>
+                        <p class="series-greeting">С 18-летием! ❤️  Сегодня все смотрят на тебя. И правильно — я бы тоже смотрел. Пусть ты получишь всё, чего хочешь. Ты это заслужила. Просто помни: ты особенная, почти как я. Постарайся не разочаровать меня. 😉</p>
+                    </div>
+                </article>
+
+                <article class="series-card">
+                    <img class="series-portrait" src="https://static.tvmaze.com/uploads/images/medium_portrait/526/1315508.jpg" alt="Бутчер из сериала Пацаны" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Бутчер</h2>
+                        <p class="series-name">Пацаны</p>
+                        <p class="series-greeting">С Днём рождением, малая. 🍻 Ну всё, теперь ты официально взрослая. Желаю тебе крепких нервов, побольше бабла и поменьше ублюдков вокруг. Отрывайся как следует, бери от жизни всё и никому не позволяй тебе указывать, как жить. Будь крутой. И не облажайся. Это приказ.</p>
+                    </div>
+                </article>
+
+                <article class="series-card">
+                    <img class="series-portrait" src="https://www.kinomania.ru/sites/default/files/styles/article/public/news_images/32360cc376d9eccccb1fe41583e4eabc.jpeg" alt="Тайлер Дёрден на постере Бойцовского клуба" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Тайлер Дёрден</h2>
+                        <p class="series-name">Бойцовский клуб</p>
+                        <p class="series-greeting">С днём рождения. Забудь сегодня о чужих правилах. Тебе 18 — теперь пора решать самой, чего ты хочешь от этой жизни. Загадай желание. Выбери свою следующую главу. А потом сделай первый шаг. Не живи так, как от тебя ждут. Живи так, как хочется тебе.</p>
+                    </div>
+                </article>
+
+                <article class="series-card">
+                    <img class="series-portrait" src="https://avatars.mds.yandex.net/i?id=61bd159af72a0f2c3f5e79f00a4a9b294049b5b5-5382665-images-thumbs&n=13" alt="Дерек Хейл из сериала Волчонок" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Дерек Хейл</h2>
+                        <p class="series-name">Волчонок</p>
+                        <p class="series-greeting">С днём рождения. Оставайся смелой и верной себе. А если вдруг станет темно, помни: твоя стая всегда рядом.</p>
+                    </div>
+                </article>
+            </div>
+
+            <header class="tab-page-heading">
+                <p class="section-kicker">И от тех, кто давал сил</p>
+                <h1 id="series-heading">Поздравления от друзьяшек</h1>
+            </header>
+            <div class="series-list">
+                <article class="series-card">
+                    <img class="series-portrait" src="images/friends/sienna.jpg" alt="Сиенна" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Sienna Rivera</h2>
+                        <p class="series-greeting">Дорогая фурри сеструля поздравляю тебя с днём рождения!!! Желаю тебе всего только самого искреннего и лучшего!!! Чтобы тебя поздравил лично Хоумлендер и исполнил все твои мечты! Люблю!❤️</p>
+                    </div>
+                </article>
+                <article class="series-card">
+                    <img class="series-portrait" src="images/friends/grinya.jpg" alt="Гриня" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Grinya</h2>
+                        <p class="series-greeting">С днюхай йоу, успехов в жизни, начинаниях и продолжениях. Чтоб всё было круто невменяемо и вменяемо!!!🙂</p>
+                    </div>
+                </article>
+                <article class="series-card">
+                    <img class="series-portrait" src="images/friends/beluga.jpg" alt="Белуга" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Beluga</h2>
+                        <p class="series-greeting">Привет, Мджей. Это Beluga твой личный эдитор, хах.<br>Так вот, хотел-бы пожелать тебе, побольше счастья,  здоровье, что-бы всегда оставалась такой-же красивой, и весёлой. Удачки тебе</p>
+                    </div>
+                </article>
+                <article class="series-card">
+                    <img class="series-portrait" src="images/friends/nastya.jpg" alt="Настя" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Настя</h2>
+                        <p class="series-greeting">Поздравляю, любимая моя! Желаю тебе счастья, чтобы сиять, и сил, чтобы гасить ебальники докучающих❤️ С дршкой тебя!!!</p>
+                    </div>
+                </article>
+                <article class="series-card">
+                    <img class="series-portrait" src="images/friends/kiri.jpg" alt="Кири" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Кири</h2>
+                        <p class="series-greeting">Йоуу, мжижа, с дэрэшкой! Желаю попасть в караоке и жоск спеть овердоз, и отдохнуть на нг в москве</p>
+                    </div>
+                </article>
+                <article class="series-card">
+                    <img class="series-portrait" src="images/friends/giga.jpg" alt="Гига" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Гига</h2>
+                        <p class="series-greeting">С днём рождения, Миджей! Желаю тебе, чтобы каждый день приносил радость, а люди вокруг были искренними и добрыми. Пусть здоровье не подводит, мечты сбываются, и творчество приносит только удовольствие. Пусть вдохновение никогда не покидает, а всё задуманное обязательно получается</p>
+                    </div>
+                </article>
+                <article class="series-card">
+                    <img class="series-portrait" src="images/friends/diana.jpg" alt="Диана" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Диана</h2>
+                        <p class="series-greeting">Милена, я очень тебя люблю, ты та, кого я никогда не забываю. Тебе уже 18 лет, это очень значимый возраст, открывается много новых возможностей. Я с тобой с 23 года и я очень рада, что мы еще поддерживаем общение. Люблю тебя, с днем рождения!❤️💋</p>
+                    </div>
+                </article>
+                <article class="series-card">
+                    <img class="series-portrait" src="images/friends/lumi.jpg" alt="Lumi" loading="lazy">
+                    <div class="series-card-copy">
+                        <h2>Lumi</h2>
+                        <p class="series-greeting">С днём рождения Милена! Оставайся такой же жизнерадостной, сильной и красивой, поменьше проблем и бесплатного стоматолога. всех благ)</p>
+                    </div>
+                </article>
+        </section>
+
+        <section class="tab-page" id="coupons-content" data-panel="Купоны" aria-labelledby="coupons-heading" hidden>
+            <header class="tab-page-heading">
+                <p class="section-kicker">коробочка тёплых слов и желаний</p>
+                <h1 id="coupons-heading">Для тебя</h1>
+            </header>
+
+            <section class="love-notes" aria-labelledby="love-notes-heading">
+                <div class="coupons-section-heading">
+                    <p class="section-kicker">на случай, если забудешь</p>
+                    <h2 id="love-notes-heading">Причины моей любви к тебе</h2>
+                </div>
+                <div class="note-slip" id="note-slip" aria-live="polite">
+                    <span class="note-slip-mark" aria-hidden="true">♡</span>
+                    <p id="love-note">Тут спрятаны маленькие записки специально для тебя.</p>
+                </div>
+                <button class="draw-note-button" id="draw-note" type="button">
+                    <span>Достать записку</span>
+                    <span aria-hidden="true">↗</span>
+                </button>
+            </section>
+
+            <section class="wish-coupons" aria-labelledby="wish-coupons-heading">
+                <div class="coupons-section-heading">
+                    <p class="section-kicker">срок действия — бессрочно, но всего 1 раз)</p>
+                    <h2 id="wish-coupons-heading">Купоны на исполнение желаний</h2>
+                </div>
+                <div class="coupon-list">
+                    <article class="wish-coupon">
+                        <span class="coupon-number">01</span>
+                        <h3>Безоговорочная победа в споре</h3>
+                    </article>
+                    <article class="wish-coupon">
+                        <span class="coupon-number">02</span>
+                        <h3>Вечер любимого сериала</h3>
+                    </article>
+                    <article class="wish-coupon">
+                        <span class="coupon-number">03</span>
+                        <h3>Видеосвидание с игрой или болтовнёй до ночи</h3>
+                    </article>
+                    <article class="wish-coupon">
+                        <span class="coupon-number">04</span>
+                        <h3>Любимый десерт с доставкой к твоей двери</h3>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="bottom-bar">
+        <nav class="bottom-nav" role="tablist" aria-label="Разделы приложения">
+            <button class="nav-tab is-active" id="tab-home" type="button" role="tab" aria-selected="true" aria-controls="app-space" aria-label="Главное" data-tab="Главное">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3.5 10 8.5-7 8.5 7v10a1 1 0 0 1-1 1h-5.2v-7h-4.6v7H4.5a1 1 0 0 1-1-1z"/></svg>
+                <span>Главное</span>
+            </button>
+            <button class="nav-tab" id="tab-photos" type="button" role="tab" aria-selected="false" aria-controls="app-space" aria-label="Фотки" data-tab="Фотки" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m21 15-5-5L5 20"/></svg>
+                <span>Фотки</span>
+            </button>
+            <button class="nav-tab" id="tab-series" type="button" role="tab" aria-selected="false" aria-controls="app-space" aria-label="Сериалы" data-tab="Сериалы" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 9 5 3-5 3zM8 4l3 4m5-4-3 4m-5 12 3-4m5 4-3-4"/></svg>
+                <span>Поздравления</span>
+            </button>
+            <button class="nav-tab" id="tab-coupons" type="button" role="tab" aria-selected="false" aria-controls="app-space" aria-label="Купоны" data-tab="Купоны" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5V9a3 3 0 0 0 0 6v2.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5V15a3 3 0 0 0 0-6z"/><path d="M13 8v1m0 3v1m0 3v1"/></svg>
+                <span>Купоны</span>
+            </button>
+        </nav>
+    </footer>
+    <script src="app.js" defer></script>
+</body>
+</html>
